@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThinkStack - Your Knowledge Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">ThinkStack</div>
+    <div class="nav-links">
+      <a href="#dashboard" class="nav-link active">Dashboard</a>
+      <a href="#notes" class="nav-link">Notes</a>
+      <a href="#tasks" class="nav-link">Tasks</a>
+      <a href="#settings" class="nav-link">Settings</a>
+    </div>
+  </nav>
+
+  <!-- Dashboard Section -->
+  <section class="section active" id="dashboard">
+    <div class="hero">
+      <h1>Welcome to ThinkStack</h1>
+      <p>Your all-in-one space for notes, tasks, and ideas.</p>
+      <div class="quick-actions">
+        <button class="action-btn" id="newNoteBtn">+ New Note</button>
+        <button class="action-btn" id="newTaskBtn">+ New Task</button>
+      </div>
+    </div>
+
+    <div class="dashboard-stats">
+      <div class="stat-card glass">
+        <h3>Total Notes</h3>
+        <p id="totalNotesCount">0</p>
+      </div>
+      <div class="stat-card glass">
+        <h3>Active Tasks</h3>
+        <p id="activeTasksCount">0</p>
+      </div>
+      <div class="stat-card glass">
+        <h3>Completed Today</h3>
+        <p id="completedTodayCount">0</p>
+      </div>
+    </div>
+
+    <div class="cards-section">
+      <div class="card glass" id="pinnedNoteCard">
+        <h2>Pinned Note</h2>
+        <p id="pinnedNoteContent">No pinned note yet.</p>
+        <button class="edit-btn" id="editPinnedNote">Edit</button>
+      </div>
+      <div class="card glass" id="upcomingTaskCard">
+        <h2>Upcoming Task</h2>
+        <p id="upcomingTaskContent">No upcoming tasks.</p>
+        <button class="edit-btn" id="editUpcomingTask">Edit</button>
+      </div>
+      <div class="card glass" id="recentActivityCard">
+        <h2>Recent Activity</h2>
+        <p id="recentActivityContent">No recent activity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notes Section -->
+  <section class="section" id="notes">
+    <h2>Your Notes</h2>
+    <div class="notes-list" id="notesList">
+      <!-- Notes will be dynamically added here -->
+    </div>
+  </section>
+
+  <!-- Tasks Section -->
+  <section class="section" id="tasks">
+    <h2>Your Tasks</h2>
+    <div class="tasks-list" id="tasksList">
+      <!-- Tasks will be dynamically added here -->
+    </div>
+  </section>
+
+  <!-- Settings Section -->
+  <section class="section" id="settings">
+    <h2>Settings</h2>
+    <div class="settings-content glass">
+      <div class="setting-item">
+        <h3>Theme</h3>
+        <select id="themeSelect">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Note Modal -->
+  <div id="noteModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>New Note</h2>
+      <form id="noteForm">
+        <input type="text" id="noteTitle" placeholder="Note Title" required>
+        <textarea id="noteContent" placeholder="Write your note here..." required></textarea>
+        <div class="form-actions">
+          <button type="submit" class="save-btn">Save</button>
+          <button type="button" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Task Modal -->
+  <div id="taskModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>New Task</h2>
+      <form id="taskForm">
+        <input type="text" id="taskTitle" placeholder="Task Title" required>
+        <textarea id="taskDescription" placeholder="Task Description" required></textarea>
+        <input type="date" id="taskDueDate" required>
+        <div class="form-actions">
+          <button type="submit" class="save-btn">Save</button>
+          <button type="button" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 ThinkStack. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
